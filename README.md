@@ -59,6 +59,3 @@ Holberton's curriculum for low-level programming. These projects are meant to he
 ### [0x18. C - Stacks, Queues - LIFO, FIFO](./0x18-stacks_queues_lifo_fifo)
 
 ---
-
-## Author
- Derrick Gee - [kai-dg](https://github.com/kai-dg)
