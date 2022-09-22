@@ -44,4 +44,4 @@ What you should learn from this project:
 ---
 
 ## Author
-* **Derrick Gee** - [Takudzwa Chidobera](https://github.com/takudzwa94)
+* **Takudzwa Chidobera** - [Takudzwa Chidobera](https://github.com/takudzwa94)
