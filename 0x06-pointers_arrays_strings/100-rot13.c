@@ -1,32 +1,38 @@
 #include "main.h"
 
 /**
- * rot13 - Entry point
- * ONE if, TWO loops only...
- * @n: input
- * Return: decrypted string
- */
-char *rot13(char *n)
-{
-	int x, rot_c = 13, i = 0;
-	char toswap[] = {'A', 'N', 'a', 'n', 'B', 'O', 'b', 'o', 'C', 'P',
-		'c', 'p', 'D', 'Q', 'd', 'q', 'E', 'R', 'e', 'r', 'F', 'S', 'f',
-		's', 'G', 'T', 'g', 't', 'H', 'U', 'h', 'u', 'I', 'V', 'i', 'v',
-		'J', 'W', 'j', 'w', 'K', 'X', 'k', 'x', 'L', 'Y', 'l', 'y', 'M',
-		'Z', 'm', 'z'};
+* rot13 - encodes a string using rot13 encryption
+* @s: a pointer given by main
+*
+* Description: change all alpha characters by rot13 rules
+* Return: returns the s pointer
+*/
 
-	while (n[i] != '\0')
+char *rot13(char *s)
+{
+	int i = 0;
+	int j;
+	int begin[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A',
+'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q',
+'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+	int end[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'N', 'O',
+'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C', 'D', 'E',
+'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M'};
+
+	while (s[i] != 0)
 	{
-		for (x = 0; x <= 51; x++)
+		for (j = 0; j < 52; j++)
 		{
-			if (n[i] == toswap[x])
+			if (s[i] == begin[j])
 			{
-				n[i] = n[i] + rot_c;
-				x = 51;
+				s[i] = end[j];
+				break;
 			}
-			rot_c = rot_c * -1;
+
 		}
 		i++;
 	}
-	return (n);
+	return (s);
 }
