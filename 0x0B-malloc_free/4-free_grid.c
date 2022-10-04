@@ -1,22 +1,25 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
+
 /**
- * free_grid - use free function on previous grid
- * @grid: 2 dim. array to free
- * @height: input height (size)
- * Return: free'd grid
- */
+* free_grid - a function that frees up a 2d grid created by script 3
+* @grid: a pointer to a pointer. a 2d array. a grid
+* @height: the height
+*
+* Description: this part should return the all clear from valgrind
+* Return: none it is void:
+*/
+
 void free_grid(int **grid, int height)
 {
-	int i;
+	int i = 0;
 
-	if (grid != NULL || height != 0)
+	if (grid == NULL || height <= 0)
+		return;
+	while (i < height)
 	{
-		for (i = 0; i < height; i++)
-		{
-			free(grid[i]);
-		}
-		free(grid);
+		free(grid[i]);
+		i++;
 	}
+	free(grid);
 }
